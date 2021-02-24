@@ -1,0 +1,121 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body,html{
+  width: 100%;
+  height: 100%;
+}
+#root{
+  height: 100%;
+}
+.App {
+  text-align: center;
+  height: 100%; 
+  color: white;
+}
+.Modal{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(78, 70, 70);
+}
+.MainForm{
+  margin: 0 auto;
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.MainForm input{
+  outline: none;
+  padding: 10px 15px;
+  margin: 10px 15px 0px 10px;
+  width: 100%;
+  background: transparent;
+  transition: all ease 0.7s;
+  border: 2px solid white;
+  border-radius: 10px;
+}
+.ErrorMessage{
+  border-radius: 10px;
+  border: 2px solid red;
+  padding: 3px 5px;
+  margin: 5px 0px;
+}
+.MainForm input:hover{
+  border-top: 2px solid rgb(18, 161, 18);
+  border-bottom: 2px solid rgb(18, 161, 18);
+  border-left: 2px solid transparent;
+  border-right: 2px solid transparent;
+  color: white;
+  background-color: rgb(46, 43, 43);
+}
+.MainForm form{
+  min-height: 415px;
+  width: 100%;
+  padding: 15% 5% 10% 5%;
+  background-color: #1b456b;
+  border-radius: 15px;
+  box-shadow:0px 0px 25px -10px rgba(255, 255, 255, 0.75);
+  animation: FormAnim 5s infinite;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.MainFormButton:hover{
+  background-color: rgb(143, 140, 140);
+  text-decoration: underline;
+}
+.ChooseLine{
+  background: #1b456b;
+  width: 100%;
+  text-transform: capitalize;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top:-25%
+}
+.ChooseButton{
+  padding: 5px 10px;
+  outline: none;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  color: white;
+  transition: all ease 0.7s;
+}
+.ChooseButton:hover{
+  color: red;
+  text-decoration: underline;
+  opacity: 0.9;
+}
+.MainFormButton{
+  margin-top: 17px;
+  margin-bottom: -17px;
+  padding: 10px 25px;
+  font-size: 16px;
+  outline: none;
+  border-radius: 15px;
+  border: 2px solid black;
+  cursor: pointer;
+  transition: all ease 0.7s;
+}
+@keyframes FormAnim {
+  0%{  box-shadow:0px 0px 25px -10px rgba(255, 255, 255, 0.75);}
+  100% {  box-shadow:0px 0px 35px -10px rgba(255, 255, 255, 0.75);}
+}
+.MainForm form h1{
+  cursor: pointer;
+  text-decoration: underline;
+}
+.MainForm label{
+  flex-direction: column;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

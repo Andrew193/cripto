@@ -1,0 +1,76 @@
+.Body{
+    grid-area: body;
+    background: #565850;
+    padding: 2% 5%;
+}
+.FirstLine{
+    display: flex;
+    text-align: left;
+}
+.kInfo div{
+    margin: 1% 5%;
+    height: fit-content;
+}
+.Pref{
+    font-size:26px;
+}
+.Criptos{
+    list-style-type: none;
+    text-align: end;
+}
+.Tooltip {
+    display: none;
+    position: fixed;
+    padding: 10px 20px;
+    border: 1px solid #b3c9ce;
+    border-radius: 4px;
+    text-align: center;
+    font: italic 14px/1.3 sans-serif;
+    color: #333;
+    background: #fff;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, .3);
+  }
+.kInfo h1{
+    text-decoration: underline;
+}
+.kItems{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.AvatarStock{
+    text-align: center;
+    width: 175px;
+    height: 175px;
+    background: linear-gradient(to right, white 50%, black 50%);
+    background-size: 200% 100%;
+    color: black;
+    cursor: pointer;
+    padding: 1%;
+    transition: all ease 0.7s;
+    background-position:left bottom;
+}
+.Avatar{
+    vertical-align: bottom;
+    margin: 1%;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 1%;
+    transition: all ease 0.7s;
+}
+.Kpart{
+    text-decoration: underline;
+    color: rgb(250, 134, 134);
+}
+.AvatarStock:hover{
+    border: 1px solid white;
+    background-position:right bottom;
+    color: white;
+}
+.Ava{
+    width: 350px;
+    height: 350px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}

@@ -1,0 +1,12 @@
+.MainContent{
+    color: white;
+    height: 100%;
+    width: 100%;
+    grid-template-areas: "navbar""body""footer";
+    display: grid;
+    grid-template-rows: 10% auto 10%;
+}
+.Body{
+    background-color: blueviolet;
+    grid-area: body;
+}
