@@ -26,6 +26,7 @@ var schema = buildSchema(`
     Dark: Int,
     Zark: Int,
     Infine: Int,
+    total:Int
   }
 `);
 var root = {

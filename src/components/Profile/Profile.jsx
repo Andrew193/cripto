@@ -10,12 +10,10 @@ function Profile() {
           Mark
           Dark
           Infine
+          total
         }
       }
     `)
-    console.log(data);
-    console.log(error);
-    console.log(loading);
     return(
         <div className={s.Body}>
             {loading &&<div>Loading</div>}

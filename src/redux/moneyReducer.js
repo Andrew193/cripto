@@ -1,7 +1,8 @@
 import types from "./types"
 let initState=null
 if(JSON.parse(localStorage.getItem("user")))
-    initState={totalMoney:JSON.parse(localStorage.getItem("user")).total,
+    initState={
+    totalMoney:JSON.parse(localStorage.getItem("user")).total,
     Mark:JSON.parse(localStorage.getItem("user")).Mark,
     Dark:JSON.parse(localStorage.getItem("user")).Dark,
     Zark:JSON.parse(localStorage.getItem("user")).Zark,
