@@ -11,7 +11,7 @@ function MainContent() {
         <div className={s.MainContent}>
             <Header />
             <Footer />
-            <Route exact path="/profile" render={()=><Profile/>}/>
+            <Route  path="/profile/:id?" render={()=><Profile/>}/>
             <Route exact path="/" render={()=><Home/>}/>
             <Route exact path="/exchange" render={()=><Exchange/>}/>
             <Route exact path="/logs" render={()=><Logs/>}/>

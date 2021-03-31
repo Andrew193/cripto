@@ -1,10 +1,11 @@
 import { gql, useQuery } from "@apollo/client";
 import { useSelector} from "react-redux";
+import { withRouter } from "react-router";
 import s from "../../styles/Profile/style.module.css"
 import FirstLine from "./FirstLine"
-function Profile() {
-    const UserInfo=useSelector(state=>state.profile)
-    const { loading, error, data } = useQuery(gql`{
+function Profile(props) {
+    const UserInfo=useSelector(state=>state.profile),
+    { loading, error, data } = useQuery(gql`{
         data : getMoney(owner:"Андрей Самсунг",password:"Sadovinskiy@gmail.com2"){
           Zark
           Mark
@@ -14,6 +15,7 @@ function Profile() {
         }
       }
     `)
+    console.log(props);
     return(
         <div className={s.Body}>
             {loading &&<div>Loading</div>}
@@ -23,4 +25,4 @@ function Profile() {
         </div>
     )
 }
-export default Profile;
+export default withRouter(Profile);
