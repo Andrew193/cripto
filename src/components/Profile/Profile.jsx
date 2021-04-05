@@ -15,7 +15,6 @@ function Profile(props) {
         }
       }
     `)
-    console.log(props);
     return(
         <div className={s.Body}>
             {loading &&<div>Loading</div>}

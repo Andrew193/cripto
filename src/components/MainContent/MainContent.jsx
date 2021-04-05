@@ -1,10 +1,10 @@
-import Header from "./header"
-import Footer from "./footer"
-import Profile from "./Profile/Profile"
-import Exchange from "./Exchange"
-import Logs from "./logs"
-import Home from "./Home"
-import s from "../styles/MainContent/style.module.css"
+import Header from "../header"
+import Footer from "../footer"
+import Profile from "../Profile/Profile"
+import Exchange from "../Exchange"
+import Logs from "../logs"
+import Home from "../Home"
+import s from "../../styles/MainContent/style.module.css"
 import { Route } from "react-router"
 function MainContent() {
     return(

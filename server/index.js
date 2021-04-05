@@ -1,8 +1,11 @@
 const MySql = require("mysql2");
 const Express = require("express")
+const CookieParser=require("cookie-parser")
 const path = require("path");
 const { graphqlHTTP } = require('express-graphql');
 const Script = require("./schema")
+const App = Express(),jsonParser = Express.json()
+App.use(CookieParser("radeongraphics"))
 const Connection = MySql.createConnection({
   host: "localhost",
   database: "cripto",
@@ -24,12 +27,13 @@ root = {
     then((value,error)=>error?{"status":true}:{"status":false})
   }
 };
-const App = Express(),jsonParser = Express.json()
-App.use('/getinfo', graphqlHTTP({
+App.use('/getinfo',(req,res)=>{
+  graphqlHTTP({
   schema: Script,
   rootValue: root,
   graphiql: true,
-}));
+  context: { req, res },
+  })(req, res)});
 App.use(Express.static(path.join(__dirname, "..", "build")));
 App.use(Express.static("public"))
 
