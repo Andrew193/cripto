@@ -1,5 +1,6 @@
 import Valid from "./formValidator"
 import Errors from "./errorMessages"
+import {Creators} from "../redux/profileReducer"
 const obj={
     f1Valid:(values) => {
         let errors = {}
@@ -16,12 +17,9 @@ const obj={
         return errors
       },
     f1Submit:(values,resetForm,dispatch,notify,LogInfo) => {
-        dispatch({ type: "ADD", toAdd: 300 })
-        dispatch({ type: "INIT", Name: values.name, Email: values.email, Age: values.age, login: true })
-        localStorage.setItem("user", JSON.stringify({
-          Name: values.name, Email: values.email, Age: values.age, total: 300,
-          login: true, Mark: 0, Dark: 0, Zark: 0, Infine: 0
-        }))
+      localStorage.setItem("user", JSON.stringify(Creators.generalInit(values)))
+        dispatch(Creators.addCreator("ADD",300))
+        dispatch(Creators.initCreator("INIT",values,values.password))
         LogInfo({ variables: { Name: values.name, Password: values.password, Age: +values.age } })
         notify()
         resetForm()

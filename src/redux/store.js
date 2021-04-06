@@ -4,5 +4,5 @@ import profileReducer from "./profileReducer"
 const store=createStore(combineReducers({
     money:moneyReducer,
     profile:profileReducer,
-}))
+}),window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 export default store;

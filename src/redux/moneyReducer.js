@@ -1,20 +1,12 @@
 import types from "./types"
-let initState=null
-if(JSON.parse(localStorage.getItem("user")))
-    initState={
-    totalMoney:JSON.parse(localStorage.getItem("user")).total,
-    Mark:JSON.parse(localStorage.getItem("user")).Mark,
-    Dark:JSON.parse(localStorage.getItem("user")).Dark,
-    Zark:JSON.parse(localStorage.getItem("user")).Zark,
-    Infine:JSON.parse(localStorage.getItem("user")).Infine}
-else
-    initState={totalMoney:0,Mark:0,Dark:0,Zark:0,Infine:0}
+let initState={totalMoney:0,Mark:0,Dark:0,Zark:0,Infine:0}
+const user=JSON.parse(localStorage.getItem("user"))
+user && (initState={totalMoney:user.total,Mark:user.Mark,Dark:user.Dark,Zark:user.Zark,Infine:user.Infine})
+
 function Reducer(state=initState,action) {
     switch (action.type) {
         case types.ADD:{
-            debugger
-            state.totalMoney+=action.toAdd;
-            return JSON.parse(JSON.stringify(state))
+            return  JSON.parse(JSON.stringify({...state,totalMoney:state.totalMoney+action.toAdd}))
         }
         case types.MINUS:{
             state.totalMoney-=action.toMinus;

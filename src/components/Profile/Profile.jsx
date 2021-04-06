@@ -4,9 +4,8 @@ import { withRouter } from "react-router";
 import s from "../../styles/Profile/style.module.css"
 import FirstLine from "./FirstLine"
 function Profile(props) {
-    const UserInfo=useSelector(state=>state.profile),
-    { loading, error, data } = useQuery(gql`{
-        data : getMoney(owner:"Андрей Самсунг",password:"Sadovinskiy@gmail.com2"){
+    const UserInfo=useSelector(state=>state.profile),{ loading, error, data } = useQuery(gql`{
+        data : getMoney(owner:"${UserInfo.Name}",password:"${UserInfo.Password}"){
           Zark
           Mark
           Dark

@@ -19,7 +19,6 @@ root = {
   },
   getPerson: (params) => Connection.query(`select * from player where idPlayer=${params.id}`).then((res) => JSON.stringify(res[0][0])),
   loginfo:(params)=>{
-    console.log(params);
     return Connection.query(`INSERT INTO player(Name,Password,Age) values(?,?,?) ON DUPLICATE KEY UPDATE Name = Name`, [params.Name,params.Password,params.Age]).then((value,error)=>error?{"status":true}:{"status":false})
   },
   logmoney:(params)=>{
@@ -28,7 +27,7 @@ root = {
   }
 };
 App.use('/getinfo',(req,res)=>{
-  graphqlHTTP({
+  return graphqlHTTP({
   schema: Script,
   rootValue: root,
   graphiql: true,

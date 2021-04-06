@@ -31,10 +31,10 @@ function App() {
       password: ""
     },
     validate:(values)=>FormikDep.f2Valid(values),
-    onSubmit: (values, { resetForm }) => {notify();resetForm();}
+    onSubmit: (values, { resetForm }) => {notify("You have been registered !");resetForm();}
   }),[flag, setFlag] = useState((false)),
   login = useSelector(state => state.profile.login),
-  notify = () => toast("You have been registered !");
+  notify = (message) => toast(message);
 
   return (
     <BrowserRouter>

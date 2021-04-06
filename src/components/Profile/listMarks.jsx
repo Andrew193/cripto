@@ -1,13 +1,8 @@
 import s from "../../styles/Profile/style.module.css"
 
 function List(props) {
-    console.log(props.names);
-    console.log(props.values);
-    let items=props.names.map((value,index)=>{
-        return <li key={index}>{value}: {props.values[index]}</li>
-    })
     return(
-        <ul className={s.Criptos}>{items}</ul>
+        <ul className={s.Criptos}>{props.names.map((value,index)=><li key={index}>{value}: {props.values[index]}</li>)}</ul>
     )
 }
 export default List;
